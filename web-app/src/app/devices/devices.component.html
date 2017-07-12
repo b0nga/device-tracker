@@ -1,3 +1,16 @@
-<p>
-  devices works!
-</p>
+<md-card class="card-layout">
+  <md-grid-list class="grid-header" cols="6" rowHeight="30px">
+    <md-grid-tile>Name</md-grid-tile>
+    <md-grid-tile>Brand</md-grid-tile>
+    <md-grid-tile>Type</md-grid-tile>
+    <md-grid-tile>Quantity</md-grid-tile>
+    <md-grid-tile>Actions</md-grid-tile>
+  </md-grid-list>
+  <md-grid-list class="grid-tile-stripes" cols="6" rowHeight="25px" *ngFor="let item of devices">
+    <md-grid-tile>{{item.name}}</md-grid-tile>
+    <md-grid-tile>{{item.brand}}</md-grid-tile>
+    <md-grid-tile>{{item.type}}</md-grid-tile>
+    <md-grid-tile>{{item.quantity}}</md-grid-tile>
+    <md-grid-tile><a (click)="onEditButtonClick(item)" href="#">Edit</a> &nbsp;|&nbsp; <a (click)="onDeleteButtonClick(item)" href="#">Del</a></md-grid-tile>
+  </md-grid-list>
+</md-card>
