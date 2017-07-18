@@ -2,7 +2,7 @@ var _ = require('lodash');
 var Devices = require('./models/deviceModel.js');
 
 module.exports = function(app) {
-    app.get('device/api/ping', function(req, res) {
+    app.get('/device/api/ping', function(req, res) {
         res.json({info:'pong'})
     });
     //Create
@@ -12,7 +12,7 @@ module.exports = function(app) {
             if(err) {
                 res.json({info:"error during create", error:err});
             }
-            res.json({info:"client created successfully"});
+            res.json({info:"device saved successfully"});
         });
     });
 
@@ -21,7 +21,7 @@ module.exports = function(app) {
             if(err) {
                 res.json({info:"error during retrieving clients", error:err});
             }
-            res.json({info:"clients found", data:deviceData});
+            res.json({info:"devices found", data:deviceData});
         });
     });
 
@@ -31,9 +31,9 @@ module.exports = function(app) {
                 res.json({info:"error during find", error:err});
             }
             if(deviceData) {
-                res.json({info:"client found", data:deviceData});
+                res.json({info:"device found", data:deviceData});
             } else {
-                res.json({info:"client not found"});
+                res.json({info:"device not found"});
             }
 
         });
@@ -50,10 +50,10 @@ module.exports = function(app) {
                     if(err) {
                         res.json({info:"error during update", error:err});
                     }
-                    res.json({info:"client updated successfully", data:deviceData});
+                    res.json({info:"device updated successfully", data:deviceData});
                 });
             } else {
-                res.json({info:"client not found"});
+                res.json({info:"device not found"});
             }
         });
     });
@@ -63,7 +63,7 @@ module.exports = function(app) {
             if(err) {
                 res.json({info:"error during remove", error:err});
             }
-            res.json({info:"client removed successfully"});
+            res.json({info:"device removed successfully"});
         });
     });
 

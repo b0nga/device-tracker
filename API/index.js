@@ -18,6 +18,14 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Methods", "PUT, POST, DELETE");
+    res.header("Access-Control-Allow-Headers", "Content-Type");
+    next();
+
+})
+
 var routes = require('./routes.js')(app);
 
 var server = app.listen(port, function() {

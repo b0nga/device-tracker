@@ -1,6 +1,7 @@
 export class CaptureModel {
-  name: String;
-  brand: String;
-  type: String;
-  quantity: Number;
+  constructor(
+  public deviceName: String,
+  public brand: String,
+  public type: String,
+  public quantity: Number) {}
 }

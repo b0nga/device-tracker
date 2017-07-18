@@ -1,18 +1,18 @@
 <md-card class="card-layout">
-  <form>
+  <form #captureForm="ngForm">
     <md-input-container class="input-full-width">
-      <input mdInput placeholder="Device Name" name="name" id="name" [(ngModel)]="CaptureModel.name" #name="ngModel" required minlength="2" maxlength="50">
+      <input mdInput placeholder="Device Name" name="deviceName" id="deviceName" required minlength="2" maxlength="50">
     </md-input-container>
     <md-input-container class="input-full-width">
-      <input mdInput placeholder="Device Brand" name="brand" id="brand" [(ngModel)]="CaptureModel.brand" #name="ngModel" required minlength="2" maxlength="50">
+      <input mdInput placeholder="Device Brand" name="brand" id="brand" required minlength="2" maxlength="50">
     </md-input-container>
     <md-input-container class="input-full-width">
-      <input mdInput placeholder="Type" name="type" id="type" [(ngModel)]="CaptureModel.type" #type="ngModel" required minlength="2" maxlength="50">
+      <input mdInput placeholder="Type" name="type" id="type" required minlength="2" maxlength="50">
     </md-input-container>
     <md-input-container class="input-full-width">
-      <input mdInput placeholder="Quantity" name="quantity" [(ngModel)]="CaptureModel.quantity" #quality="ngModel" required minlength="2" maxlength="50">
+      <input mdInput placeholder="Quantity" name="quantity" required minlength="2" maxlength="50">
     </md-input-container>
     <br>
-    <button md-raised-button primary>Save</button>
+    <button md-raised-button primary [disabled]="captureForm.invalid">Save</button>
   </form>
 </md-card>
