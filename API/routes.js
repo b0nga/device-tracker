@@ -25,8 +25,8 @@ module.exports = function(app) {
         });
     });
 
-    app.get('/device/api/retrieve/:id', function(req, res) {
-        Devices.findById(req.params.id, function(err, deviceData) {
+    app.get('/device/api/retrieve/:name', function(req, res) {
+        Devices.findById(req.params.name, function(err, deviceData) {
             if(err) {
                 res.json({info:"error during find", error:err});
             }
@@ -39,8 +39,8 @@ module.exports = function(app) {
         });
     });
 
-    app.put('/device/api/update/:id', function(req, res) {
-        Devices.findById(req.params.id, function(err, deviceData) {
+    app.put('/device/api/update/:name', function(req, res) {
+        Devices.findById(req.params.name, function(err, deviceData) {
             if(err) {
                 res.json({info:"error during find", error:err});
             }
@@ -58,10 +58,11 @@ module.exports = function(app) {
         });
     });
 
-    app.delete('/device/api/delete/:id', function(req, res) {
-        Devices.findByIdAndRemove(req.params.id, function(err) {
+    app.delete('/device/api/delete/:name', function(req, res) {
+                //alert('inside route '+req.params.name);
+        Devices.findByIdAndRemove(req.params.name, function(err) {
             if(err) {
-                res.json({info:"error during remove", error:err});
+                res.json({info:"error during remove "+req.params.name, error:err});
             }
             res.json({info:"device removed successfully"});
         });

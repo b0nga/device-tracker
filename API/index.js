@@ -20,7 +20,7 @@ app.use(bodyParser.urlencoded({
 
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Methods", "PUT, POST, DELETE");
+    res.header("Access-Control-Allow-Methods", "PUT, POST, DELETE, GET");
     res.header("Access-Control-Allow-Headers", "Content-Type");
     next();
 
