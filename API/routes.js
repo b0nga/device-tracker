@@ -39,8 +39,10 @@ module.exports = function(app) {
         });
     });
 
-    app.put('/device/api/update/:name', function(req, res) {
-        Devices.findById(req.params.name, function(err, deviceData) {
+    app.put('/device/api/update/:id', function(req, res) {
+        var updateDevice = req.params.id;
+        Devices.findById(updateDevice, function(err, deviceData) {
+            console.log(updateDevice);
             if(err) {
                 res.json({info:"error during find", error:err});
             }
@@ -58,14 +60,14 @@ module.exports = function(app) {
         });
     });
 
-    app.delete('/device/api/delete/:name', function(req, res) {
-                //alert('inside route '+req.params.name);
-        Devices.findByIdAndRemove(req.params.name, function(err) {
-            if(err) {
-                res.json({info:"error during remove "+req.params.name, error:err});
+    app.delete("/device/api/delete/:id", function (req, res) {
+        var deleteDevice = req.params.id;
+        Devices.remove({ _id: deleteDevice }, function (err) {
+            if (err) {
+                res.json({info:"error during remove "+deleteDevice, error:err});
             }
-            res.json({info:"device removed successfully"});
-        });
-    });
+            res.json({info:"Device removed successfully"});
+        })
+    })
 
 }
