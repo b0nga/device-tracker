@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Device Details</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+      <ion-list>
+        <ion-item><b>Brand:</b> {{device.brand}}</ion-item>
+        <ion-item><b>Name:</b> {{device.name}}</ion-item>
+        <ion-item><b>Type:</b> {{device.type}}</ion-item>
+        <ion-item><b>Quantity:</b> {{device.quantity}}</ion-item>
+        <ion-item><b>Location:</b> {{device.location}}</ion-item>
+        <ion-item><b>Operating System:</b> {{device.operatingSystem}}</ion-item>
+        <ion-item><b>Product:</b> {{device.product}}</ion-item>
+        <ion-item><b>Date Created:</b> {{device.dateCreated | date:'d/M/yy'}}</ion-item>
+        <ion-item><b>Last Updated:</b> {{device.lastUpdated | date:'d/M/yy'}}</ion-item>
+      </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-navbar padding>
+    <button ion-button outline outline (click)="onEditButtonClick($event, device)">
+      EDIT
+    </button>
+
+    <!-- Only icon (no text) -->
+    <button ion-button outline  (click)="onAddLocationButtonClick($event, device)">
+      Add Location
+    </button>
+
+    <!-- Float the icon right -->
+    <button ion-button outline (click)="onDeleteButtonClick(device._id)">
+      DELETE
+    </button>
+  </ion-navbar>
+</ion-footer>

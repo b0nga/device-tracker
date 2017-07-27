@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Add Device
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+
+  <ion-item>
+    <ion-label floating>Brand</ion-label>
+    <ion-input type="text" name="brand" id="brand" [(ngModel)]="deviceModel.brand"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>Name</ion-label>
+    <ion-input type="text" name="name" id="name" [(ngModel)]="deviceModel.name"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>Type</ion-label>
+    <ion-input type="text" name="type" id="type" [(ngModel)]="deviceModel.type"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>Quantity</ion-label>
+    <ion-input type="number" name="quantity" id="quantity" [(ngModel)]="deviceModel.quantity"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>Operating System</ion-label>
+    <ion-input type="text" name="operatingSystem" id="operatingSystem" [(ngModel)]="deviceModel.operatingSystem"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>Location</ion-label>
+    <ion-input type="text" name="location" id="location" [(ngModel)]="deviceModel.location"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>Product</ion-label>
+    <ion-input type="text" name="product" id="product" [(ngModel)]="deviceModel.product"></ion-input>
+  </ion-item>
+
+</ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-navbar>
+    <button ion-button (click)="onSaveButtonClick()">Save</button>
+  </ion-navbar>
+</ion-footer>

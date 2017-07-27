@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Edit Device
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+
+  <ion-item>
+    <ion-label floating>Brand</ion-label>
+    <ion-input type="text" value={{device.brand}}></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>Name</ion-label>
+    <ion-input type="text" value={{device.name}}></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>Type</ion-label>
+    <ion-input type="text" value={{device.type}}></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>Quantity</ion-label>
+    <ion-input type="text" value={{device.quantity}}></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>Location</ion-label>
+    <ion-input type="text" value={{device.location}}></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>Operating System</ion-label>
+    <ion-input type="text" value={{device.operatingSystem}}></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>Product</ion-label>
+    <ion-input type="text" value={{device.product}}></ion-input>
+  </ion-item>
+
+</ion-list>
+</ion-content>
+<ion-footer>
+  <ion-navbar>
+    <button ion-button (click)="onUpdateButtonClick(device)">Update</button>
+  </ion-navbar>
+</ion-footer>
