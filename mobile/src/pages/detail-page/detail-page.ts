@@ -4,6 +4,9 @@ import { EditPage } from '../edit-page/edit-page';
 import { DeviceService } from '../../app/app.service';
 import { DeviceModel } from '../../app/app.model';
 import { HomePage } from '../home/home';
+import { LocationPage } from "../location/location-page";
+import { ProductPage } from "../product/product-page";
+import { OperatingSystemPage } from "../operating-system/operating-system-page";
 
 @Component({
   templateUrl: './detail-page.html'
@@ -28,5 +31,20 @@ export class DetailPage {
 
   onAddLocationButtonClick($event, device) {
     alert("Add location for "+device.name);
+  }
+
+  addLocation($event, device) {
+    alert("Location "+device._id);
+    this.nav.push(LocationPage, device);
+  }
+
+  addOperatingSystem($event, device) {
+    alert("OS "+device._id);
+    this.nav.push(OperatingSystemPage, device);
+  }
+
+  addProduct($event, device) {
+    alert("Product "+device._id);
+    this.nav.push(ProductPage, device);
   }
 }

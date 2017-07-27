@@ -1,7 +1,13 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Device Details</ion-title>
+  <ion-navbar color="secondary">
+    <!--<button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>-->
+    <ion-title>Device Tracker</ion-title>
   </ion-navbar>
+  <ion-toolbar color="primary">
+    <ion-title>Device Details</ion-title>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
@@ -10,11 +16,23 @@
         <ion-item><b>Name:</b> {{device.name}}</ion-item>
         <ion-item><b>Type:</b> {{device.type}}</ion-item>
         <ion-item><b>Quantity:</b> {{device.quantity}}</ion-item>
-        <ion-item><b>Location:</b> {{device.location}}</ion-item>
-        <ion-item><b>Operating System:</b> {{device.operatingSystem}}</ion-item>
-        <ion-item><b>Product:</b> {{device.product}}</ion-item>
         <ion-item><b>Date Created:</b> {{device.dateCreated | date:'d/M/yy'}}</ion-item>
         <ion-item><b>Last Updated:</b> {{device.lastUpdated | date:'d/M/yy'}}</ion-item>
+        <ion-item><b>Location:</b>
+          <ion-fab middle right edge>
+            <button ion-fab mini (click)="addLocation($event, device)"><ion-icon md="md-clipboard"></ion-icon></button>
+          </ion-fab>
+        </ion-item>
+        <ion-item><b>Operating System:</b>
+          <ion-fab middle right edge>
+            <button ion-fab mini (click)="addOperatingSystem($event, device)"><ion-icon md="md-clipboard"></ion-icon></button>
+          </ion-fab>
+        </ion-item>
+        <ion-item><b>Product:</b>
+          <ion-fab middle right edge>
+            <button ion-fab mini (click)="addProduct($event, device)"><ion-icon md="md-clipboard"></ion-icon></button>
+          </ion-fab>
+        </ion-item>
       </ion-list>
 </ion-content>
 

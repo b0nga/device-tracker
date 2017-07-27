@@ -9,6 +9,9 @@ import { ListPage } from '../pages/list/list';
 import { DetailPage } from '../pages/detail-page/detail-page';
 import { EditPage } from '../pages/edit-page/edit-page';
 import { AddPage } from '../pages/add-page/add-page';
+import { LocationPage } from '../pages/location/location-page';
+import { OperatingSystemPage } from '../pages/operating-system/operating-system-page';
+import { ProductPage } from '../pages/product/product-page';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -21,7 +24,10 @@ import { DeviceService } from './app.service';
     ListPage,
     DetailPage,
     EditPage,
-    AddPage
+    AddPage,
+    LocationPage,
+    OperatingSystemPage,
+    ProductPage
   ],
   imports: [
     BrowserModule,
@@ -35,7 +41,10 @@ import { DeviceService } from './app.service';
     ListPage,
     DetailPage,
     EditPage,
-    AddPage
+    AddPage,
+    LocationPage,
+    OperatingSystemPage,
+    ProductPage
   ],
   providers: [
     StatusBar,

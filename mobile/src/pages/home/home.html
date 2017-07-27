@@ -1,17 +1,20 @@
 <ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
+  <ion-navbar color="secondary">
+    <!--<button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Home</ion-title>
+    </button>-->
+    <ion-title>Device Tracker</ion-title>
   </ion-navbar>
+  <ion-toolbar color="primary">
+    <ion-title>Device List
+      <ion-fab middle right edge>
+        <button color="secondary" ion-fab mini (click)="onAddButtonClick()"><ion-icon name="add"></ion-icon></button>
+      </ion-fab>
+    </ion-title>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-fab top right edge>
-    <button ion-fab mini (click)="onAddButtonClick()"><ion-icon name="add"></ion-icon></button>
-  </ion-fab>
-
   <ion-searchbar (ionInput)="searchDevice($event)"></ion-searchbar>
   <ion-list>
     <ion-item *ngFor="let item of devices" (click)="onItemTap($event, item)">
