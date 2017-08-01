@@ -13,4 +13,8 @@ export class LocationPage {
   constructor(private navParams:NavParams) {
     this.device = this.navParams.data;
   }
+
+  onLocationAddClick() {
+    alert("Location added.");
+  }
 }

@@ -12,25 +12,28 @@
 
 <ion-content padding>
       <ion-list>
-        <ion-item><b>Brand:</b> {{device.brand}}</ion-item>
+        <ion-item><b>Brand:</b> <span item end>{{device.brand}}</span></ion-item>
         <ion-item><b>Name:</b> {{device.name}}</ion-item>
         <ion-item><b>Type:</b> {{device.type}}</ion-item>
         <ion-item><b>Quantity:</b> {{device.quantity}}</ion-item>
         <ion-item><b>Date Created:</b> {{device.dateCreated | date:'d/M/yy'}}</ion-item>
         <ion-item><b>Last Updated:</b> {{device.lastUpdated | date:'d/M/yy'}}</ion-item>
-        <ion-item><b>Location:</b>
+        <ion-item-divider color="light"><b>Location:</b>
           <ion-fab middle right edge>
-            <button ion-fab mini (click)="addLocation($event, device)"><ion-icon md="md-clipboard"></ion-icon></button>
+            <button ion-fab mini (click)="addLocation($event, device)"> <ion-icon name="add"></ion-icon></button>
           </ion-fab>
+        </ion-item-divider>
+        <ion-item *ngFor="let location of locations" (click)="showDetails(location)">
+          {{location.name}} <ion-badge color="secondary" item-end>{{location.quantity}}</ion-badge>
         </ion-item>
         <ion-item><b>Operating System:</b>
           <ion-fab middle right edge>
-            <button ion-fab mini (click)="addOperatingSystem($event, device)"><ion-icon md="md-clipboard"></ion-icon></button>
+            <button ion-fab mini (click)="addOperatingSystem($event, device)"> <ion-icon ios="ios-clipboard" md="md-clipboard"></ion-icon></button>
           </ion-fab>
         </ion-item>
         <ion-item><b>Product:</b>
           <ion-fab middle right edge>
-            <button ion-fab mini (click)="addProduct($event, device)"><ion-icon md="md-clipboard"></ion-icon></button>
+            <button ion-fab mini (click)="addProduct($event, device)"> <ion-icon ios="ios-clipboard" md="md-clipboard"></ion-icon></button>
           </ion-fab>
         </ion-item>
       </ion-list>

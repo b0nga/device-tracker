@@ -16,6 +16,7 @@ import { ProductPage } from '../pages/product/product-page';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { DeviceService } from './app.service';
+import { LocationService } from './location.service';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { DeviceService } from './app.service';
     StatusBar,
     SplashScreen,
     DeviceService,
+    LocationService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
